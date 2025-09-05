@@ -3,237 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milan Thesiya</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Milan | Portfolio</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!---CSS-->
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="icon" href="assets/photo.jpg" type="image/jpeg">
 </head>
 <body>
     <div class="container">
-        <video class="back-vid" autoplay loop muted plays-inline src="videos/galaxy.mp4"></video>
 
+        <!------------Header---------------->
 
-
-        <header data-aos="fade-down" data-aos-duration="2000">
-            <div class="left">
-                <img src="images/miladicode.png" alt="logo">
-                <h2><span style="color: #72a1dea2;">Miladi</span>Code</h2>
+        <nav id="header">
+            <div class="nav-logo" href="#home" onclick="scrollToHome()">
+                <p class="nav-name">Milan <span>Thesiya</span></p>
             </div>
-
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills1">Skills</a></li>
-                <li><a href="#projects1">Projects</a></li>
-            </ul>
-
-            <div class="box-icons">
-                <p><i class='bx bxl-github'><a href="https://github.com/Thesiya/"></a></i></p>
-                <p><i class='bx bxl-linkedin-square'></i></p>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav_menu_list">
+                    <li class="nav_list">
+                        <a class="nav-link active-link home" onclick="scrollToHome()">Home</a>
+                    </li>
+                    <li class="nav_list">
+                        <a class="nav-link about" onclick="scrollToAbout()">About</a>
+                    </li>
+                    <li class="nav_list">
+                        <a class="nav-link services" onclick="scrollToServices()">Services</a>
+                    </li>
+                    <li class="nav_list">
+                        <a class="nav-link contact" onclick="scrollToContact()">Contact</a>
+                    </li>
+                </ul>
             </div>
-
-            <div class="menu-icon">
-                <i class='bx bx-menu'></i>
-            </div>            
-        </header>
-        <div class="sidebar">
-            <div class="close-icon">
-                <i class='bx bx-x'></i>
+            <div class="nav-menu-btn">
+                <i class="uil uil-bars" id="toggleBtn" onclick="myMenuFunction()"></i>
             </div>
-            
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills1">Skills</a></li>
-                <li><a href="#projects1">Projects</a></li>
-            </ul>
+        </nav>
 
-            <div class="social-sidebar">
-                <a><i class='bx bxl-github'><a href="https://github.com/Thesiya/"></a></i></a>
-                <a><i class='bx bxl-linkedin-square'></i></a>
-            </div>
-        </div>
+        <!------------Main---------------->
 
-        <div class="blackhole-box" data-aos="fade-down" data-aos-duration="2000">
-            <video autoplay loop muted plays-inline src="videos/blackhole.mp4"></video>
-        </div>
+        <main class="wrapper">
 
-        <section class="hero ">
-            <div class="hero-info autoBlur" data-aos="fade-right" data-aos-duration="1000">
-                <div class="hero-info-title" >
-                    <i class='bx bxl-sketch'></i>
-                    Full Stack Developer Portfolio
-                </div>
+            <!------------Landing Page---------------->
 
-                <h1 data-aos="fade-right" data-aos-duration="3000">Providing <span class="gradient">the best</span> Project <span class="gradient">Experience</span></h1>
-
-                <p>I'm a front-end & developer with experience in Website, Mobile and Software development. Check out my projects and skills.</p>
-
-                <button><i class='bx bx-send' ></i> Contact Me</button>
-            </div>
-            
-            <div class="skills-video-box " >
-                <video class="skills-video autoBlur" autoplay loop muted plays-inline src="videos/hero-video.mp4"></video>
-            </div>
-        
-            <div class="scroll-down"></div>
-        </section>
-
-        <seaction class="info-section" id="about">
-            <h1 class="section-title autoDisplay">Hello,There👋</h1>
-            <div class="info-cards">
-                <div class="card ">
-                    <h1>Hi there, I'm Milan</h1>
-                    <p>With 1 years of experience, I have honed my skills in both frontend and backend dev, creating dynamic and responsive websites.</p>
-                
-                    <img src="images/grid1.png" alt="">
-                </div>
-
-                <div class="card">
-                    <h1>Tech Stack</h1>
-                    <p>I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications.</p>
-                
-                    <img src="images/grid2.png" alt="">
-                </div>
-
-                <div class="card">
-                    <h1>I’m very flexible with time zone communications & locations</h1>
-                    <p>I'm based in Italy, Bari and open to remote work worldwide.</p>
-                
-                    <video src="videos/glob.mp4" autoplay loop muted plays-inline></video>
-
-                    <button><i class='bx bx-send'></i> Contact Me</button>
-                </div>
-
-                <div class="card">
-                    <h1>My Passion for Coding</h1>
-                    <p>I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies, and enhancing my skills.</p>
-                
-                    <img src="images/grid4.png" alt="">
-                </div>
-            </div>
-        </seaction>
-
-        <section class="my-project" id="projects1">
-            <h1 class="section-title autoDisplay">My Projects 👨‍💻</h1>
-            <div class="project-card">
-                <div class="project-vidbox autoBlur" >
-                    <video loop id="projectVideo1" src="videos/project1.mp4"></video>
-                    <div class="hover-sign"></div>
-                </div>
-                <div class="project-info fadein-left">
-                    <h1>Animated <span class="gradient">Gaming</span> Website</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ipsam excepturi ex in corrupti similique dolor nam, suscipit, odio soluta at recusandae nulla, id fugiat!</p>
-                    <button><i class='bx bx-link-external' ></i> Website</button>
-            </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo2" src="videos/project2.mp4"></video>
-                </div>
-                <div class="project-info fadein-left">
-                    <h1> Modern <span class="gradient">Portfolio</span> Website </h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam modi voluptates assumenda omnis impedit ipsa veritatis soluta earum minima consequatur.</p>
-                    <button><i class='bx bx-link-external' ></i> Website</button>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo3" src="videos/project3.mp4"></video>
-                </div>
-                
-                <div class="project-info fadein-left">
-                    <h1>Movie <span class="gradient">Landing</span>  Page</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores numquam saepe itaque sapiente odit neque necessitatibus explicabo hic laudantium ipsam nesciunt ducimus, cumque ratione esse.</p>
-                    <button><i class='bx bx-link-external' ></i> Website</button>
-                </div>
-            </div>
-        </section>
-
-        
-        <section class="skills-section" id="skills1">
-            <h1 class="section-title autoDisplay">
-                My Skills 💪
-            </h1>
-            <div class="skills-box autoDisplay">
-                <img class="skills-image" src="images/digital brain (2).png" alt="">
-                <div class="Designer">
-                    <h1 class="gradient">Designer <i class='bx bx-laptop'></i></h1>
-                    <p>I have expertise in HTML, CSS, JavaScript, and design tools like Figma and Adobe XD. My strength lies in blending aesthetics with functionality to create seamless user experiences.</p>    
-                </div>
-                
-                <div class="coder">
-                    <h1 class="gradient">Coder <i class='bx bx-code-block' ></i></h1>
-                    <p>I’m skilled in HTML, CSS, JavaScript, and frameworks like React and Node.js. I also have experience with database management using MongoDB and MySQL.</p>
-                </div>
-
-                <div class="slider" reverse="true" style="
-                --width: 100px;
-                --height: 100px;
-                --quantity: 9;
-                ">
-                    <div class="list">
-                        <div class="item" style="--position: 1"><img src="images/1.png" alt=""></div>
-                        <div class="item" style="--position: 2"><img src="images/2.png" alt=""></div>
-                        <div class="item" style="--position: 3"><img src="images/3.webp" alt=""></div>
-                        <div class="item" style="--position: 4"><img src="images/4.webp" alt=""></div>
-                        <div class="item" style="--position: 5"><img src="images/5.png" alt=""></div>
-                        <div class="item" style="--position: 6"><img src="images/6.png" alt=""></div>
-                        <div class="item" style="--position: 7"><img src="images/7.png" alt=""></div>
-                        <div class="item" style="--position: 8"><img src="images/8.png" alt=""></div>
-                        <div class="item" style="--position: 9"><img src="images/9.png" alt=""></div>
+            <section class="landing-page" id="home">
+                <div class="featured-text">
+                    <div class="featured-name">
+                        <p>Hi! I'm <span>Milan</span></p>
+                    </div>
+                    <div class="featured-text-info">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ut distinctio accusantium unde soluta voluptates perferendis ex ducimus nesciunt culpa obcaecati veritatis facilis magni nostrum, voluptatem, odio exercitationem quasi consequatur.</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com" class="icon"><i class="uil uil-instagram"></i></a>
+                        <a href="https://www.linkedin.com" class="icon"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="https://www.github.com/Thesiya" class="icon"><i class="uil uil-github-alt"></i></a>
+                    </div>
+                    <div class="featured-text-btn">
+                        <button class="btn blue-btn">My CV</button>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="contact-section ">
-            <h1 class="section-title autoDisplay">Let's talk😊</h1>
-
-            <div class="social-box autoBlur">
-                <a href="#"><i class='bx bxs-phone'></i> +39 111 222 444</a>
-                <a href="#"><i class='bx bxl-telegram' ></i> Contact Example.com</a>
-                <a href="#"><i class='bx bxl-linkedin-square' ></i> Contact Example.com</a>
-                <div class="social-icons">
-                    <a href="#"><i class='bx bxl-youtube' ></i></a>
-                    <a href="#"><i class='bx bxl-twitter' ></i></a>
-                    <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                <div class="profile-image">
+                    <div class="image">
+                        <img src="assets/photo.jpg" alt="avatar">
+                    </div>
                 </div>
+                <div class="scroll-btn">
+                    <i class="fa-solid fa-angle-down" onclick="scrollToAbout()"></i>
+                </div>
+            </section>
+
+            <!------------About Box---------------->
+
+            <section class="section" id="about">
+                <div class="top-header">
+                    <h1>About<span> Me</span></h1>
+                    <span>My journey as a developer</span>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="about-info">
+                            <h3>Introduction</h3>
+                            <p>With a robust foundation in languages like Php Laravel, Python Django and React.
+                                I've honed my programming skills across diverse projects.
+                                My expertise extends to frontend, backend development and database management,
+                                allowing me to tackle complex challenges efficiently.
+                                A proven track record of delivering high quality code and innovative solutions makes me a valuable
+                                asset to any development team.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col skills">
+                        <h3 class="skills-title">Skills</h3>
+                        <div class="col skills-section">
+                            <div class="skills-box frontend">
+                                <div class="skills-header">
+                                    <h3>Frontend</h3>
+                                </div>
+                                <div class="skills-list">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                </div>
+                            </div>
+                            <div class="skills-box">
+                                <div class="skills-header">
+                                    <h3>Backend</h3>
+                                </div>
+                                <div class="skills-list">
+                                    <span>PHP Laravel</span>
+                                    <span>Python Django</span>
+                                </div>
+                            </div>
+                            <div class="skills-box">
+                                <div class="skills-header">
+                                    <h3>Databases</h3>
+                                </div>
+                                <div class="skills-list">
+                                    <span>MySQL</span>
+                                    <span>MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!------------Services---------------->
+
+            <section class="section" id="services">
+                <div class="top-header">
+                    <h1>Services</h1>
+                    <span>Your Projects, My expertise</span>
+                </div>
+                <div class="service-container">
+                    <div class="service-box">
+                        <i class="uil uil-briefcase-alt"></i>
+                        <h3>Full Stack Developer</h3>
+                        <label>Create robust and scalable web applications.</label>
+                    </div>
+                    <div class="service-box">
+                        <i class="uil uil-users-alt"></i>
+                        <h3>Responsive Design</h3>
+                        <label>Optimise user experience across diffrent devices.</label>
+                    </div>
+                    <div class="service-box">
+                        <i class="uil uil-award"></i>
+                        <h3>UI/UX Design</h3>
+                        <label>Create exceptional user experiences through engaging user interfaces and simplicity of softwares.</label>
+                    </div>
+                </div>
+            </section>
+
+            <!------------Contact---------------->
+
+            <section class="section" id="contact">
+                <div class="top-header">
+                    <h1>Get in touch</h1>
+                    <span>Got a project in mind? Let's connect</span>
+                </div>
+                <div class="row">
+                    <div class="col contact-info">
+                        <h2>Find me <i class="uil uil-corner-right-down"></i></h2>
+                        <p><i class="uil uil-envelope"></i> Email: milanthesiya54@gmail.com</p>
+                        <p><i class="uil uil-phone"></i> Tel: 9904579061</p>
+                        <div class="contact-social-icons">
+                            <a href="https://www.instagram.com" class="icon"><i class="uil uil-instagram"></i></a>
+                            <a href="https://www.linkedin.com" class="icon"><i class="uil uil-linkedin-alt"></i></a>
+                            <a href="https://www.github.com/Thesiya" class="icon"><i class="uil uil-github-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form">
+                            <div class="form-inputs">
+                                <input type="name" class="input-field" placeholder="Enter name">
+                                <input type="email" class="input-field" placeholder="Enter email">
+                            </div>
+                            <div class="text-area">
+                                <textarea placeholder="Your message"></textarea>
+                            </div>
+                            <div class="form-button">
+                                <button class="btn">Send <i class="uil uil-message"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!------------Footer---------------->
+
+        <footer>
+            <div class="top-footer">
+                <p>Milan</p>
             </div>
-
-            <div class="contact-box autoBlur">
-                <p>Wheter you're looking to build a new website, improve your existing platform, or bring a unique project to file. i'm here to help.</p>
-            
-                <p>Full Name</p>
-                <input placeholder="Your Full name" type="full name">
-
-                <p>Email Address</p>
-                <input placeholder="Your Email" type="Contact">
-
-                <p>Your Message</p>
-                <input  class="input-message" type="contact" placeholder="shaire your thoughts...">
-
-                <button>Send Message <i class='bx bx-mail-send'></i></button>
+            <div class="middle-footer">
+                <ui class="footer-menu">
+                    <li class="footer_menu_list">
+                        <a onclick="scrollToHome()">Home</a>
+                        <a onclick="scrollToAbout()">About</a>
+                        <a onclick="scrollToServices()">Services</a>
+                        <a onclick="scrollToContact()">Contact</a>
+                    </li>
+                </ui>
             </div>
-        
-        </section> 
-
-        <section class="footer">
-            <h1>©️2025, Made with ❤️ by MiladiCode</h1>
-            <div class="box-icons">
-                <p><i class='bx bxl-youtube'></i></p>
-                <p><i class='bx bxl-github'></i></p>
-                <p><i class='bx bxl-linkedin-square'></i></p>
+            <div class="bottom-footer">
+                <p>Copyright &copy; <a onclick="scrollToHome()" style="text-decoration: none;">Milan</a></p>
             </div>
-        </section>
+        </footer>
 
-        
     </div>
-    <script src="app.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script >
-      AOS.init();
-    </script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+
 </body>
 </html>
