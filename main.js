@@ -1,11 +1,25 @@
 let navMenu = document.getElementById('navMenu');
 let toggleBtn = document.getElementById('toggleBtn');
 
+// Add 'loading' class to body initially
+document.body.classList.add("loading");
+
+window.addEventListener("load", function() {
+    const preloader = document.getElementById("preloader");
+    const mainContent = document.getElementById("blckholebeforecontent");
+
+    setTimeout(() => {
+        if (preloader) preloader.style.display = "none";   
+        if (mainContent) mainContent.classList.add("show"); 
+        document.body.classList.remove("loading");          
+    }, 1500); 
+});
+
 function myMenuFunction() {
     if (navMenu.className === 'nav-menu') {
         navMenu.className += ' responsive';
         toggleBtn.className = 'uil uil-multiply';
-    }else{
+    } else {
         navMenu.className = 'nav-menu';
         toggleBtn.className = 'uil uil-bars';
     }
@@ -29,16 +43,16 @@ navLink.forEach(link => {
 window.addEventListener('scroll', headerShadow);
 window.onload = headerShadow();
 
-function headerShadow(){
+function headerShadow() {
     const navHeader = document.getElementById('header');
 
-    if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         navHeader.style.boxShadow = '0 4px 10px #00000088';
         navHeader.style.height = '70px';
         navHeader.style.lineHeight = '70px';
         navHeader.style.background = '#00000078';
         navHeader.style.backdropFilter = 'blur(8px)';
-    }else{
+    } else {
         navHeader.style.boxShadow = 'none';
         navHeader.style.height = '90px';
         navHeader.style.lineHeight = '90px';
@@ -54,37 +68,37 @@ const sr = ScrollReveal({
     reset: false
 })
 
-sr.reveal('.featured-name', {delay: 50})
-sr.reveal('.featured-text-info', {delay: 50})
-sr.reveal('.featured-text-btn', {delay: 60})
-sr.reveal('.social-icons', {delay: 90})
+sr.reveal('.featured-name', { delay: 50 })
+sr.reveal('.featured-text-info', { delay: 50 })
+sr.reveal('.featured-text-btn', { delay: 60 })
+sr.reveal('.social-icons', { delay: 90 })
 
-sr.reveal('.project-box', {delay: 70})
-sr.reveal('.service-box', {delay: 70})
+sr.reveal('.project-box', { delay: 70 })
+sr.reveal('.service-box', { delay: 70 })
 
 sr.reveal('.top-header', {})
 
-const srLeft = ScrollReveal ({
+const srLeft = ScrollReveal({
     origin: 'left',
     distance: '80px',
     duration: 1750,
     reset: false
 })
 
-srLeft.reveal('.about-info',{delay: 60})
-srLeft.reveal('.contact-info',{delay: 60})
+srLeft.reveal('.about-info', { delay: 60 })
+srLeft.reveal('.contact-info', { delay: 60 })
 
-const srRight = ScrollReveal ({
+const srRight = ScrollReveal({
     origin: 'right',
     distance: '80px',
     duration: 1750,
     reset: false
 })
 
-srRight.reveal('.skills-title',{delay: 50})
-srRight.reveal('.skills-box',{delay: 50})
-srRight.reveal('.form',{delay: 50})
-srRight.reveal('.profile-image',{delay: 60})
+srRight.reveal('.skills-title', { delay: 50 })
+srRight.reveal('.skills-box', { delay: 50 })
+srRight.reveal('.form', { delay: 50 })
+srRight.reveal('.profile-image', { delay: 60 })
 
 const sections = document.querySelectorAll('section[id]');
 
@@ -92,11 +106,11 @@ function scrollActive() {
     const scrollY = window.scrollY;
     sections.forEach(current => {
         const sectionHeight = current.offsetHeight,
-        sectionTop = current.offsetTop - 100,
-        sectionId = current.getAttribute('id');
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            sectionTop = current.offsetTop - 100,
+            sectionId = current.getAttribute('id');
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelector('.' + sectionId).classList.add('active-link');
-        }else{
+        } else {
             document.querySelector('.' + sectionId).classList.remove('active-link')
         }
     })
@@ -106,8 +120,8 @@ window.addEventListener('load', scrollActive);
 window.addEventListener('scroll', scrollActive);
 
 const easingFunctions = {
-    easeInOutCubic: t => t < 0.5 
-        ? 4 * t * t * t 
+    easeInOutCubic: t => t < 0.5
+        ? 4 * t * t * t
         : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
 };
 let currentEasingFunction = 'easeInOutCubic';
@@ -118,8 +132,8 @@ function scrollToTarget(target, offset = 0, duration = 2000, easingType = curren
         window.scrollAnimation = null;
     }
 
-    const targetPosition = typeof target === 'number' 
-        ? target 
+    const targetPosition = typeof target === 'number'
+        ? target
         : target.getBoundingClientRect().top + window.scrollY;
 
     const startPosition = window.scrollY;
@@ -166,7 +180,55 @@ function scrollToServices() {
     scrollToTarget(serviceSection, 0, 2000);
 }
 
+function scrollToProjects() {
+    const serviceProjects = document.getElementById('projects');
+    scrollToTarget(serviceProjects, 0, 2000);
+}
+
 function scrollToContact() {
     const contactSection = document.getElementById('contact');
     scrollToTarget(contactSection, 0, 2000);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    new Typed('#autoTyped', {
+        strings: [
+            "I’m a BCA graduate passionate about creating digital solutions.",
+            "I’m eager to gain experience and contribute to innovative projects."
+        ],
+        typeSpeed: 40,
+        backSpeed: 20,
+        startDelay: 500,
+        backDelay: 2000,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+    });
+});
+
+function downloadCV() {
+  const link = document.createElement("a");
+  link.href = "milan_resume.pdf";  
+  link.download = "milan_resume.pdf";     
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function submitForm(event) {
+  event.preventDefault(); 
+
+  const form = event.target.closest('.form');
+  const inputs = form.querySelectorAll('input, textarea');
+
+  for (let input of inputs) {
+    if (!input.checkValidity()) {
+      input.reportValidity();
+      return; 
+    }
+  }
+
+  alert("✅ Your message has been sent!");
+
+  inputs.forEach(input => input.value = "");
 }
