@@ -8,16 +8,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!---CSS-->
     <link rel="stylesheet" href="mystyle.css">
-    <link rel="icon" href="photo.jpg" type="image/jpeg">
+    <link rel="icon" href="assets/photo.jpg" type="image/jpeg">
 </head>
 <body>
-    <div class="container">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <video autoplay muted loop playsinline id="preloader-video">
+            <source src="galaxy.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="loader">
+            <div class="blackhole">
+                <div class="blackhole-circle"></div>
+                <div class="blackhole-disc"></div>
+            </div>
+      
+            <div class="curve">
+                <svg viewBox="0 0 500 500">
+                    <path id="loading" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"></path>
+                    <text width="500">
+                        <textPath xlink:href="#loading">
+                            loading...
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+        </div>
+    </div>    
+
+    <div class="container" id="blckholebeforecontent">
 
         <!------------Header---------------->
 
         <nav id="header">
             <div class="nav-logo" href="#home" onclick="scrollToHome()">
-                <p class="nav-name">Milan <span>Thesiya</span></p>
+                <p class="nav-name">Port <span>Folio</span></p>
             </div>
             <div class="nav-menu" id="navMenu">
                 <ul class="nav_menu_list">
@@ -29,6 +56,9 @@
                     </li>
                     <li class="nav_list">
                         <a class="nav-link services" onclick="scrollToServices()">Services</a>
+                    </li>
+                    <li class="nav_list">
+                        <a class="nav-link projects" onclick="scrollToProjects()">Projects</a>
                     </li>
                     <li class="nav_list">
                         <a class="nav-link contact" onclick="scrollToContact()">Contact</a>
@@ -52,20 +82,20 @@
                         <p>Hi! I'm <span>Milan</span></p>
                     </div>
                     <div class="featured-text-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ut distinctio accusantium unde soluta voluptates perferendis ex ducimus nesciunt culpa obcaecati veritatis facilis magni nostrum, voluptatem, odio exercitationem quasi consequatur.</p>
+                        <p id="autoTyped"></p>
                     </div>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com" class="icon"><i class="uil uil-instagram"></i></a>
-                        <a href="https://www.linkedin.com" class="icon"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="https://www.instagram.com/milan_thesiya96/" class="icon"><i class="uil uil-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/milan-thesiya-014a80382" class="icon"><i class="uil uil-linkedin-alt"></i></a>
                         <a href="https://www.github.com/Thesiya" class="icon"><i class="uil uil-github-alt"></i></a>
                     </div>
                     <div class="featured-text-btn">
-                        <button class="btn blue-btn">My CV</button>
+                        <button class="btn blue-btn" onclick="downloadCV()">My CV</button>
                     </div>
                 </div>
                 <div class="profile-image">
                     <div class="image">
-                        <img src="photo.jpg" alt="avatar">
+                        <img src="assets/photo6.jpeg" alt="avatar">
                     </div>
                 </div>
                 <div class="scroll-btn">
@@ -156,6 +186,46 @@
                 </div>
             </section>
 
+            <!------------Services---------------->
+
+            <section class="section" id="projects">
+                <div class="top-header">
+                    <h1>Projects</h1>
+                    <span>My Previous Applications!</span>
+                </div>
+                <div id="card-area">
+                    <div class="wrapper1">
+                        <div class="project-container">
+                            <div class="project-box">
+                                <img src="assets/agriculture.jpg" alt="Agriculture">
+                                <div class="overlay">
+                                    <h3>AgroMart</h3>
+                                    <p>It is an online marketplace that connects farmers and customers, enabling direct crop listing, fair pricing, streamlining businesses, etc.</p>
+                                    <a href="#">Visit</a>
+                                </div>
+                            </div>
+                            <div class="project-box">
+                                <img src="assets/hospital.jpg" alt="Hospital">
+                                <div class="overlay">
+                                    <h3>SmartMedicare</h3>
+                                    <p>It is a healthcare management system which connects patients, doctors and clinic by providing online appointment,E-Records, billing automation, etc.</p>
+                                    <a href="#">Visit</a>
+                                </div>
+                            </div>
+                            <div class="project-box">
+                                <img src="assets/school.jpg" alt="School">
+                                <div class="overlay">
+                                    <h3>EduConnect</h3>
+                                    <p>It is an online leaning and course management system built for students and educators by providing course enrollment, work submission, progress tracking, etc.</p>
+                                    <a href="#">Visit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
             <!------------Contact---------------->
 
             <section class="section" id="contact">
@@ -166,25 +236,20 @@
                 <div class="row">
                     <div class="col contact-info">
                         <h2>Find me <i class="uil uil-corner-right-down"></i></h2>
-                        <p><i class="uil uil-envelope"></i> Email: milanthesiya54@gmail.com</p>
-                        <p><i class="uil uil-phone"></i> Tel: 9904579061</p>
-                        <div class="contact-social-icons">
-                            <a href="https://www.instagram.com" class="icon"><i class="uil uil-instagram"></i></a>
-                            <a href="https://www.linkedin.com" class="icon"><i class="uil uil-linkedin-alt"></i></a>
-                            <a href="https://www.github.com/Thesiya" class="icon"><i class="uil uil-github-alt"></i></a>
-                        </div>
+                        <p><i class="uil uil-envelope"></i> milanthesiya54@gmail.com</p>
+                        <p><i class="uil uil-phone"></i> 9904579061</p>
                     </div>
                     <div class="col">
                         <div class="form">
                             <div class="form-inputs">
-                                <input type="name" class="input-field" placeholder="Enter name">
-                                <input type="email" class="input-field" placeholder="Enter email">
+                                <input type="text" class="input-field" placeholder="Enter name" required>
+                                <input type="email" class="input-field" placeholder="Enter email" required>
                             </div>
                             <div class="text-area">
-                                <textarea placeholder="Your message"></textarea>
+                                <textarea placeholder="Your message" required></textarea>
                             </div>
                             <div class="form-button">
-                                <button class="btn">Send <i class="uil uil-message"></i></button>
+                                <button class="btn" onclick="submitForm(event)">Send <i class="uil uil-message"></i></button>
                             </div>
                         </div>
                     </div>
@@ -196,27 +261,16 @@
         <!------------Footer---------------->
 
         <footer>
-            <div class="top-footer">
-                <p>Milan</p>
-            </div>
-            <div class="middle-footer">
-                <ui class="footer-menu">
-                    <li class="footer_menu_list">
-                        <a onclick="scrollToHome()">Home</a>
-                        <a onclick="scrollToAbout()">About</a>
-                        <a onclick="scrollToServices()">Services</a>
-                        <a onclick="scrollToContact()">Contact</a>
-                    </li>
-                </ui>
-            </div>
             <div class="bottom-footer">
-                <p>Copyright &copy; <a onclick="scrollToHome()" style="text-decoration: none;">Milan</a></p>
+                <p>Copyright 2025 &copy; <a onclick="scrollToHome()" style="text-decoration: none;">Milan</a></p>
             </div>
         </footer>
 
     </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="main.js"></script>
 
 </body>
